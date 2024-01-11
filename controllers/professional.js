@@ -1,6 +1,8 @@
 const { getDb } = require("../DB/connection");
-const { ObjectId } = require("mongodb");
+// const { ObjectId } = require("mongodb");
 const getAllProssionals = (req, res) => {
+  // let professionals = await db.collection("professionals").find({}).toArray();
+
   const db = getDb();
   let professionals = [];
   db.collection("professional")
@@ -13,6 +15,8 @@ const getAllProssionals = (req, res) => {
         res.status(500).json({error:"Could not found documents"})
     })
 };
+
 module.exports={
     getAllProssionals
 }
+
